@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply antialiased; }
+  h1,h2,h3,h4,h5,h6 { @apply font-display text-softblack; }
+}
+
+@layer components {
+  .btn-primary { @apply inline-flex items-center justify-center rounded-xl bg-royal text-pure px-5 py-3 font-medium shadow-md hover:shadow-lg hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-royal/40 transition ease-in-out duration-300; }
+  .btn-accent { @apply inline-flex items-center justify-center rounded-xl bg-gold text-softblack px-5 py-3 font-semibold shadow-md hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/40 transition ease-in-out duration-300; }
+  .card { @apply bg-pure rounded-xl shadow-md hover:shadow-lg transition ease-in-out duration-300; }
+  .input { @apply rounded-xl border border-gray-200 bg-pure px-4 py-2 focus:outline-none focus:ring-2 focus:ring-royal/30; }
+}
+
+/* Loader shimmer utility */
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 0%, #fafafa 40%, #f0f0f0 80%);
+  background-size: 1400px 100%;
+}
+
+/* Toast animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
